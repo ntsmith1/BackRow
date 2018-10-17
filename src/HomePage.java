@@ -39,7 +39,7 @@ public class HomePage extends javax.swing.JFrame {
         loginSubmit = new javax.swing.JButton();
         loadingScreen = new javax.swing.JDialog();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        emergencyExit = new javax.swing.JButton();
         homePage = new javax.swing.JPanel();
         homePageTxt = new javax.swing.JLabel();
         homeLogin = new javax.swing.JButton();
@@ -163,10 +163,10 @@ public class HomePage extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel3.setText("Loading...");
 
-        jButton1.setText("Emergency Exit");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        emergencyExit.setText("Emergency Exit");
+        emergencyExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                emergencyExitActionPerformed(evt);
             }
         });
 
@@ -181,7 +181,7 @@ public class HomePage extends javax.swing.JFrame {
                         .addComponent(jLabel3))
                     .addGroup(loadingScreenLayout.createSequentialGroup()
                         .addGap(127, 127, 127)
-                        .addComponent(jButton1)))
+                        .addComponent(emergencyExit)))
                 .addContainerGap(131, Short.MAX_VALUE))
         );
         loadingScreenLayout.setVerticalGroup(
@@ -190,7 +190,7 @@ public class HomePage extends javax.swing.JFrame {
                 .addGap(110, 110, 110)
                 .addComponent(jLabel3)
                 .addGap(31, 31, 31)
-                .addComponent(jButton1)
+                .addComponent(emergencyExit)
                 .addContainerGap(92, Short.MAX_VALUE))
         );
 
@@ -284,9 +284,9 @@ public class HomePage extends javax.swing.JFrame {
         loadingScreen.setVisible(true);
     }//GEN-LAST:event_loginSubmitActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void emergencyExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emergencyExitActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_emergencyExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -324,6 +324,7 @@ public class HomePage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton emergencyExit;
     private javax.swing.JLabel exitConfirmTxt;
     private javax.swing.JDialog exitDialogBox;
     private javax.swing.JButton exitNo;
@@ -332,7 +333,6 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JButton homeLogin;
     private javax.swing.JPanel homePage;
     private javax.swing.JLabel homePageTxt;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
