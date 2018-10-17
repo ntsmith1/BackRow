@@ -1,2 +1,5 @@
 # BackRow
 230 Project Team Back Row
+
+
+ALL FILES/FOLDERS WE NEED TO WORRY ABOUT ARE IN src
