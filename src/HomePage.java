@@ -26,21 +26,221 @@ public class HomePage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        exitDialogBox = new javax.swing.JDialog();
+        exitConfirmTxt = new javax.swing.JLabel();
+        exitYes = new javax.swing.JButton();
+        exitNo = new javax.swing.JButton();
+        loginDialogBox = new javax.swing.JDialog();
+        loginTxt = new javax.swing.JLabel();
+        positionSelection = new javax.swing.JComboBox();
+        loginPasswordField = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        loginSubmit = new javax.swing.JButton();
+        homePage = new javax.swing.JPanel();
+        homePageTxt = new javax.swing.JLabel();
+        homeLogin = new javax.swing.JButton();
+        homeExit = new javax.swing.JButton();
+
+        exitDialogBox.setTitle("Are you sure?");
+        exitDialogBox.setAlwaysOnTop(true);
+        exitDialogBox.setMinimumSize(new java.awt.Dimension(200, 100));
+
+        exitConfirmTxt.setText("Are you sure you want to exit?");
+
+        exitYes.setText("Yes");
+        exitYes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitYesActionPerformed(evt);
+            }
+        });
+
+        exitNo.setText("No");
+        exitNo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitNoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout exitDialogBoxLayout = new javax.swing.GroupLayout(exitDialogBox.getContentPane());
+        exitDialogBox.getContentPane().setLayout(exitDialogBoxLayout);
+        exitDialogBoxLayout.setHorizontalGroup(
+            exitDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exitDialogBoxLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(exitDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(exitDialogBoxLayout.createSequentialGroup()
+                        .addComponent(exitYes)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(exitNo, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(exitConfirmTxt))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        exitDialogBoxLayout.setVerticalGroup(
+            exitDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exitDialogBoxLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exitConfirmTxt)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(exitDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(exitYes)
+                    .addComponent(exitNo))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        loginDialogBox.setPreferredSize(new java.awt.Dimension(455, 155));
+        loginDialogBox.setResizable(false);
+        loginDialogBox.setSize(new java.awt.Dimension(455, 155));
+
+        loginTxt.setText("Please select your position from the drop-down box and provide your password.");
+
+        positionSelection.setMaximumRowCount(3);
+        positionSelection.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Supervisor", "Secretary", "Meter Reader" }));
+
+        loginPasswordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginPasswordFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Password:");
+
+        jLabel2.setText("Position:");
+
+        loginSubmit.setText("Submit");
+        loginSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginSubmitActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout loginDialogBoxLayout = new javax.swing.GroupLayout(loginDialogBox.getContentPane());
+        loginDialogBox.getContentPane().setLayout(loginDialogBoxLayout);
+        loginDialogBoxLayout.setHorizontalGroup(
+            loginDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginDialogBoxLayout.createSequentialGroup()
+                .addGroup(loginDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(loginDialogBoxLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(positionSelection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(loginDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(loginPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginDialogBoxLayout.createSequentialGroup()
+                                .addComponent(loginSubmit)
+                                .addGap(24, 24, 24))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginDialogBoxLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(loginTxt)))
+                .addContainerGap(71, Short.MAX_VALUE))
+        );
+        loginDialogBoxLayout.setVerticalGroup(
+            loginDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginDialogBoxLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(loginTxt)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(loginDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(positionSelection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(loginPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addComponent(loginSubmit)
+                .addContainerGap())
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        homePageTxt.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        homePageTxt.setText("Valley Falls Water Association");
+
+        homeLogin.setText("Login");
+        homeLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeLoginActionPerformed(evt);
+            }
+        });
+
+        homeExit.setText("Exit");
+        homeExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeExitActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout homePageLayout = new javax.swing.GroupLayout(homePage);
+        homePage.setLayout(homePageLayout);
+        homePageLayout.setHorizontalGroup(
+            homePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(homePageLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(homePageTxt)
+                .addContainerGap(48, Short.MAX_VALUE))
+            .addGroup(homePageLayout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(homeLogin)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(homeExit, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75))
+        );
+        homePageLayout.setVerticalGroup(
+            homePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(homePageLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(homePageTxt)
+                .addGap(36, 36, 36)
+                .addGroup(homePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(homeLogin)
+                    .addComponent(homeExit))
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(homePage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(homePage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void homeExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeExitActionPerformed
+        //shows dialog box
+        exitDialogBox.setVisible(true);
+    }//GEN-LAST:event_homeExitActionPerformed
+
+    private void homeLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeLoginActionPerformed
+        //make dialog box appear with dropdown box of position
+        loginDialogBox.setVisible(true);
+        //have user select their position and enter their password
+        //when position/password combo is correct, send to their appropriate interfaces
+    }//GEN-LAST:event_homeLoginActionPerformed
+
+    private void exitNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitNoActionPerformed
+        exitDialogBox.setVisible(false);
+    }//GEN-LAST:event_exitNoActionPerformed
+
+    private void exitYesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitYesActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_exitYesActionPerformed
+
+    private void loginPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginPasswordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginPasswordFieldActionPerformed
+
+    private void loginSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginSubmitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginSubmitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +278,20 @@ public class HomePage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel exitConfirmTxt;
+    private javax.swing.JDialog exitDialogBox;
+    private javax.swing.JButton exitNo;
+    private javax.swing.JButton exitYes;
+    private javax.swing.JButton homeExit;
+    private javax.swing.JButton homeLogin;
+    private javax.swing.JPanel homePage;
+    private javax.swing.JLabel homePageTxt;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JDialog loginDialogBox;
+    private javax.swing.JPasswordField loginPasswordField;
+    private javax.swing.JButton loginSubmit;
+    private javax.swing.JLabel loginTxt;
+    private javax.swing.JComboBox positionSelection;
     // End of variables declaration//GEN-END:variables
 }
