@@ -37,6 +37,9 @@ public class HomePage extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         loginSubmit = new javax.swing.JButton();
+        loadingScreen = new javax.swing.JDialog();
+        jLabel3 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         homePage = new javax.swing.JPanel();
         homePageTxt = new javax.swing.JLabel();
         homeLogin = new javax.swing.JButton();
@@ -136,7 +139,7 @@ public class HomePage extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginDialogBoxLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(loginTxt)))
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         loginDialogBoxLayout.setVerticalGroup(
             loginDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,9 +152,46 @@ public class HomePage extends javax.swing.JFrame {
                     .addComponent(loginPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
                 .addComponent(loginSubmit)
                 .addContainerGap())
+        );
+
+        loadingScreen.setMinimumSize(new java.awt.Dimension(400, 300));
+        loadingScreen.setResizable(false);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel3.setText("Loading...");
+
+        jButton1.setText("Emergency Exit");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout loadingScreenLayout = new javax.swing.GroupLayout(loadingScreen.getContentPane());
+        loadingScreen.getContentPane().setLayout(loadingScreenLayout);
+        loadingScreenLayout.setHorizontalGroup(
+            loadingScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loadingScreenLayout.createSequentialGroup()
+                .addGroup(loadingScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(loadingScreenLayout.createSequentialGroup()
+                        .addGap(111, 111, 111)
+                        .addComponent(jLabel3))
+                    .addGroup(loadingScreenLayout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addComponent(jButton1)))
+                .addContainerGap(131, Short.MAX_VALUE))
+        );
+        loadingScreenLayout.setVerticalGroup(
+            loadingScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loadingScreenLayout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(jLabel3)
+                .addGap(31, 31, 31)
+                .addComponent(jButton1)
+                .addContainerGap(92, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -239,8 +279,14 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_loginPasswordFieldActionPerformed
 
     private void loginSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginSubmitActionPerformed
-        // TODO add your handling code here:
+        homePage.setVisible(false);
+        loginDialogBox.setVisible(false);
+        loadingScreen.setVisible(true);
     }//GEN-LAST:event_loginSubmitActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -286,8 +332,11 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JButton homeLogin;
     private javax.swing.JPanel homePage;
     private javax.swing.JLabel homePageTxt;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JDialog loadingScreen;
     private javax.swing.JDialog loginDialogBox;
     private javax.swing.JPasswordField loginPasswordField;
     private javax.swing.JButton loginSubmit;
