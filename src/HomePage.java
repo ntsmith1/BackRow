@@ -41,10 +41,22 @@ public class HomePage extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         emergencyExit = new javax.swing.JButton();
         secretaryPage = new javax.swing.JDialog();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         supervisorPage = new javax.swing.JDialog();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         meterReaderPage = new javax.swing.JDialog();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
         homePage = new javax.swing.JPanel();
         homePageTxt = new javax.swing.JLabel();
@@ -97,7 +109,6 @@ public class HomePage extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        loginDialogBox.setPreferredSize(new java.awt.Dimension(455, 155));
         loginDialogBox.setResizable(false);
         loginDialogBox.setSize(new java.awt.Dimension(455, 155));
 
@@ -202,65 +213,142 @@ public class HomePage extends javax.swing.JFrame {
 
         secretaryPage.setMinimumSize(new java.awt.Dimension(100, 100));
 
-        jLabel4.setText("Hello! This is the page for the secretary!");
+        jButton3.setText("Create User Account");
+
+        jButton4.setText("View User Account");
+        jButton4.setToolTipText("");
+
+        jLabel5.setText("Account #:");
+
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("OTHER THINGS WITH COSTS AND SHIT");
 
         javax.swing.GroupLayout secretaryPageLayout = new javax.swing.GroupLayout(secretaryPage.getContentPane());
         secretaryPage.getContentPane().setLayout(secretaryPageLayout);
         secretaryPageLayout.setHorizontalGroup(
             secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(secretaryPageLayout.createSequentialGroup()
-                .addGap(106, 106, 106)
-                .addComponent(jLabel4)
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addGroup(secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, secretaryPageLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jButton3))
+                    .addGroup(secretaryPageLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton4)
+                .addGap(66, 66, 66))
         );
         secretaryPageLayout.setVerticalGroup(
             secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(secretaryPageLayout.createSequentialGroup()
-                .addGap(119, 119, 119)
+                .addGap(22, 22, 22)
+                .addComponent(jButton3)
+                .addGap(18, 18, 18)
+                .addGroup(secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton4)
+                    .addComponent(jLabel5)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(73, 73, 73)
                 .addComponent(jLabel4)
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         supervisorPage.setMinimumSize(new java.awt.Dimension(100, 100));
 
-        jLabel5.setText("this is the supervisor page");
+        jLabel9.setText("what should the supervisor see.....");
 
         javax.swing.GroupLayout supervisorPageLayout = new javax.swing.GroupLayout(supervisorPage.getContentPane());
         supervisorPage.getContentPane().setLayout(supervisorPageLayout);
         supervisorPageLayout.setHorizontalGroup(
             supervisorPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(supervisorPageLayout.createSequentialGroup()
-                .addGap(124, 124, 124)
-                .addComponent(jLabel5)
-                .addContainerGap(150, Short.MAX_VALUE))
+                .addGap(134, 134, 134)
+                .addComponent(jLabel9)
+                .addContainerGap(96, Short.MAX_VALUE))
         );
         supervisorPageLayout.setVerticalGroup(
             supervisorPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(supervisorPageLayout.createSequentialGroup()
-                .addGap(106, 106, 106)
-                .addComponent(jLabel5)
-                .addContainerGap(180, Short.MAX_VALUE))
+                .addGap(102, 102, 102)
+                .addComponent(jLabel9)
+                .addContainerGap(184, Short.MAX_VALUE))
         );
 
         meterReaderPage.setMinimumSize(new java.awt.Dimension(100, 100));
 
-        jLabel6.setText("this is the meter reader page");
+        jLabel7.setText("Account #:");
+
+        jLabel8.setText("Meter Reading:");
+
+        jButton1.setText("Submit");
+
+        jButton2.setText("Load Account Info");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("[selected account info]\n[past readings, expected usage, meter type(s), etc.]");
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jLabel6.setText("METER READER PAGE");
 
         javax.swing.GroupLayout meterReaderPageLayout = new javax.swing.GroupLayout(meterReaderPage.getContentPane());
         meterReaderPage.getContentPane().setLayout(meterReaderPageLayout);
         meterReaderPageLayout.setHorizontalGroup(
             meterReaderPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(meterReaderPageLayout.createSequentialGroup()
-                .addGap(145, 145, 145)
-                .addComponent(jLabel6)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addGap(24, 24, 24)
+                .addGroup(meterReaderPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
+                .addGap(37, 37, 37)
+                .addGroup(meterReaderPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+                    .addComponent(jTextField1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(24, 24, 24))
+            .addGroup(meterReaderPageLayout.createSequentialGroup()
+                .addGroup(meterReaderPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(meterReaderPageLayout.createSequentialGroup()
+                        .addGap(143, 143, 143)
+                        .addComponent(jButton1))
+                    .addGroup(meterReaderPageLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(meterReaderPageLayout.createSequentialGroup()
+                        .addGap(174, 174, 174)
+                        .addComponent(jLabel6)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         meterReaderPageLayout.setVerticalGroup(
             meterReaderPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(meterReaderPageLayout.createSequentialGroup()
-                .addGap(142, 142, 142)
+                .addContainerGap()
                 .addComponent(jLabel6)
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addGroup(meterReaderPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7)
+                    .addComponent(jButton2))
+                .addGap(28, 28, 28)
+                .addGroup(meterReaderPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addGap(30, 30, 30)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -370,6 +458,10 @@ public class HomePage extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_emergencyExitActionPerformed
 
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -415,12 +507,24 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JButton homeLogin;
     private javax.swing.JPanel homePage;
     private javax.swing.JLabel homePageTxt;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JDialog loadingScreen;
     private javax.swing.JDialog loginDialogBox;
     private javax.swing.JPasswordField loginPasswordField;
