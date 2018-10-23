@@ -41,23 +41,33 @@ public class HomePage extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         emergencyExit = new javax.swing.JButton();
         secretaryPage = new javax.swing.JDialog();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        createAccountBtn = new javax.swing.JButton();
+        viewAccountBtn = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        accountNum = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         supervisorPage = new javax.swing.JDialog();
         jLabel9 = new javax.swing.JLabel();
         meterReaderPage = new javax.swing.JDialog();
-        jTextField1 = new javax.swing.JTextField();
+        meterEntryAccountNum = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        meterReading = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        meterReadingSubmit = new javax.swing.JButton();
+        loadAccountInfo = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        selectedAccountInfo = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
+        createAccountPage = new javax.swing.JDialog();
+        createAccountSubmit = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        newAccountNumber = new javax.swing.JTextField();
+        newAccountName = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox();
+        jLabel13 = new javax.swing.JLabel();
+        newInitMeterReading = new javax.swing.JTextField();
         homePage = new javax.swing.JPanel();
         homePageTxt = new javax.swing.JLabel();
         homeLogin = new javax.swing.JButton();
@@ -211,18 +221,23 @@ public class HomePage extends javax.swing.JFrame {
                 .addContainerGap(92, Short.MAX_VALUE))
         );
 
-        secretaryPage.setMinimumSize(new java.awt.Dimension(100, 100));
+        secretaryPage.setMinimumSize(new java.awt.Dimension(450, 400));
 
-        jButton3.setText("Create User Account");
+        createAccountBtn.setText("Create New Account");
+        createAccountBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createAccountBtnActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("View User Account");
-        jButton4.setToolTipText("");
+        viewAccountBtn.setText("View Account");
+        viewAccountBtn.setToolTipText("");
 
         jLabel5.setText("Account #:");
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        accountNum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                accountNumActionPerformed(evt);
             }
         });
 
@@ -236,28 +251,29 @@ public class HomePage extends javax.swing.JFrame {
                 .addGroup(secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, secretaryPageLayout.createSequentialGroup()
                         .addGap(34, 34, 34)
-                        .addComponent(jButton3))
+                        .addComponent(createAccountBtn))
                     .addGroup(secretaryPageLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4)
-                .addGap(66, 66, 66))
+                            .addGroup(secretaryPageLayout.createSequentialGroup()
+                                .addComponent(accountNum, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(viewAccountBtn)))))
+                .addContainerGap(175, Short.MAX_VALUE))
         );
         secretaryPageLayout.setVerticalGroup(
             secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(secretaryPageLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(jButton3)
+                .addComponent(createAccountBtn)
                 .addGap(18, 18, 18)
                 .addGroup(secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
+                    .addComponent(viewAccountBtn)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(accountNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(73, 73, 73)
                 .addComponent(jLabel4)
                 .addContainerGap(127, Short.MAX_VALUE))
@@ -290,14 +306,19 @@ public class HomePage extends javax.swing.JFrame {
 
         jLabel8.setText("Meter Reading:");
 
-        jButton1.setText("Submit");
+        meterReadingSubmit.setText("Submit");
+        meterReadingSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                meterReadingSubmitActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Load Account Info");
+        loadAccountInfo.setText("Load Account Info");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("[selected account info]\n[past readings, expected usage, meter type(s), etc.]");
-        jScrollPane1.setViewportView(jTextArea1);
+        selectedAccountInfo.setColumns(20);
+        selectedAccountInfo.setRows(5);
+        selectedAccountInfo.setText("[selected account info]\n[past readings, expected usage, meter type(s), etc.]");
+        jScrollPane1.setViewportView(selectedAccountInfo);
 
         jLabel6.setText("METER READER PAGE");
 
@@ -312,16 +333,16 @@ public class HomePage extends javax.swing.JFrame {
                     .addComponent(jLabel8))
                 .addGap(37, 37, 37)
                 .addGroup(meterReaderPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
-                    .addComponent(jTextField1))
+                    .addComponent(meterReading, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+                    .addComponent(meterEntryAccountNum))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(loadAccountInfo)
                 .addGap(24, 24, 24))
             .addGroup(meterReaderPageLayout.createSequentialGroup()
                 .addGroup(meterReaderPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(meterReaderPageLayout.createSequentialGroup()
                         .addGap(143, 143, 143)
-                        .addComponent(jButton1))
+                        .addComponent(meterReadingSubmit))
                     .addGroup(meterReaderPageLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -337,18 +358,93 @@ public class HomePage extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addGap(28, 28, 28)
                 .addGroup(meterReaderPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(meterEntryAccountNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
-                    .addComponent(jButton2))
+                    .addComponent(loadAccountInfo))
                 .addGap(28, 28, 28)
                 .addGroup(meterReaderPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(meterReading, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addGap(30, 30, 30)
-                .addComponent(jButton1)
+                .addComponent(meterReadingSubmit)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+        );
+
+        createAccountPage.setMinimumSize(new java.awt.Dimension(400, 400));
+
+        createAccountSubmit.setText("Submit");
+        createAccountSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createAccountSubmitActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("Name:");
+
+        jLabel11.setText("Account #:");
+
+        newAccountNumber.setEditable(false);
+        newAccountNumber.setText("[acc. num. here]");
+
+        jLabel12.setText("Meter Type:");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel13.setText("Initial Meter Reading:");
+
+        javax.swing.GroupLayout createAccountPageLayout = new javax.swing.GroupLayout(createAccountPage.getContentPane());
+        createAccountPage.getContentPane().setLayout(createAccountPageLayout);
+        createAccountPageLayout.setHorizontalGroup(
+            createAccountPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, createAccountPageLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(createAccountSubmit)
+                .addGap(46, 46, 46))
+            .addGroup(createAccountPageLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(createAccountPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(createAccountPageLayout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(newAccountNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(createAccountPageLayout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(createAccountPageLayout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(newInitMeterReading))
+                    .addGroup(createAccountPageLayout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(newAccountName, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(232, Short.MAX_VALUE))
+        );
+        createAccountPageLayout.setVerticalGroup(
+            createAccountPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, createAccountPageLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(createAccountPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(newAccountName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(createAccountPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(newAccountNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(createAccountPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(createAccountPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(newInitMeterReading, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
+                .addComponent(createAccountSubmit)
+                .addGap(21, 21, 21))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -458,9 +554,22 @@ public class HomePage extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_emergencyExitActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void accountNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accountNumActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_accountNumActionPerformed
+
+    private void createAccountBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAccountBtnActionPerformed
+        createAccountPage.setVisible(true);
+    }//GEN-LAST:event_createAccountBtnActionPerformed
+
+    private void createAccountSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAccountSubmitActionPerformed
+        //DO SOMETHING ABOUT THE NEW USER TO BE CREATED
+        createAccountPage.setVisible(false);
+    }//GEN-LAST:event_createAccountSubmitActionPerformed
+
+    private void meterReadingSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meterReadingSubmitActionPerformed
+        //Do something with the information given.
+    }//GEN-LAST:event_meterReadingSubmitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -498,6 +607,10 @@ public class HomePage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField accountNum;
+    private javax.swing.JButton createAccountBtn;
+    private javax.swing.JDialog createAccountPage;
+    private javax.swing.JButton createAccountSubmit;
     private javax.swing.JButton emergencyExit;
     private javax.swing.JLabel exitConfirmTxt;
     private javax.swing.JDialog exitDialogBox;
@@ -507,11 +620,12 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JButton homeLogin;
     private javax.swing.JPanel homePage;
     private javax.swing.JLabel homePageTxt;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -521,18 +635,23 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JButton loadAccountInfo;
     private javax.swing.JDialog loadingScreen;
     private javax.swing.JDialog loginDialogBox;
     private javax.swing.JPasswordField loginPasswordField;
     private javax.swing.JButton loginSubmit;
     private javax.swing.JLabel loginTxt;
+    private javax.swing.JTextField meterEntryAccountNum;
     private javax.swing.JDialog meterReaderPage;
+    private javax.swing.JTextField meterReading;
+    private javax.swing.JButton meterReadingSubmit;
+    private javax.swing.JTextField newAccountName;
+    private javax.swing.JTextField newAccountNumber;
+    private javax.swing.JTextField newInitMeterReading;
     private javax.swing.JComboBox positionSelection;
     private javax.swing.JDialog secretaryPage;
+    private javax.swing.JTextArea selectedAccountInfo;
     private javax.swing.JDialog supervisorPage;
+    private javax.swing.JButton viewAccountBtn;
     // End of variables declaration//GEN-END:variables
 }
