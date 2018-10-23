@@ -128,6 +128,8 @@ public class HomePage extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        loginDialogBox.setMinimumSize(new java.awt.Dimension(455, 155));
+        loginDialogBox.setPreferredSize(new java.awt.Dimension(455, 155));
         loginDialogBox.setResizable(false);
         loginDialogBox.setSize(new java.awt.Dimension(455, 155));
 
@@ -288,25 +290,28 @@ public class HomePage extends javax.swing.JFrame {
                 .addContainerGap(127, Short.MAX_VALUE))
         );
 
-        supervisorPage.setMinimumSize(new java.awt.Dimension(100, 100));
+        supervisorPage.setMinimumSize(new java.awt.Dimension(520, 306));
 
         jLabel9.setText("what should the supervisor see.....");
+        jLabel9.setMaximumSize(new java.awt.Dimension(2132215, 2155621));
+        jLabel9.setMinimumSize(new java.awt.Dimension(500, 500));
+        jLabel9.setPreferredSize(new java.awt.Dimension(500, 500));
 
         javax.swing.GroupLayout supervisorPageLayout = new javax.swing.GroupLayout(supervisorPage.getContentPane());
         supervisorPage.getContentPane().setLayout(supervisorPageLayout);
         supervisorPageLayout.setHorizontalGroup(
             supervisorPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(supervisorPageLayout.createSequentialGroup()
-                .addGap(134, 134, 134)
-                .addComponent(jLabel9)
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addGap(167, 167, 167)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(170, Short.MAX_VALUE))
         );
         supervisorPageLayout.setVerticalGroup(
             supervisorPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(supervisorPageLayout.createSequentialGroup()
-                .addGap(102, 102, 102)
-                .addComponent(jLabel9)
-                .addContainerGap(184, Short.MAX_VALUE))
+                .addGap(130, 130, 130)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(153, Short.MAX_VALUE))
         );
 
         meterReaderPage.setMinimumSize(new java.awt.Dimension(100, 100));
@@ -455,6 +460,8 @@ public class HomePage extends javax.swing.JFrame {
                 .addComponent(createAccountSubmit)
                 .addGap(21, 21, 21))
         );
+
+        newUserDialogBox.setMinimumSize(new java.awt.Dimension(275, 300));
 
         newUserPosition.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Supervisor", "Secretary", "Meter Reader" }));
 
