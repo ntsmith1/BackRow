@@ -68,10 +68,19 @@ public class HomePage extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox();
         jLabel13 = new javax.swing.JLabel();
         newInitMeterReading = new javax.swing.JTextField();
+        newUserDialogBox = new javax.swing.JDialog();
+        newUserPosition = new javax.swing.JComboBox();
+        newUserPassword = new javax.swing.JPasswordField();
+        newUserConfirmPassword = new javax.swing.JPasswordField();
+        newUserSubmit = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         homePage = new javax.swing.JPanel();
         homePageTxt = new javax.swing.JLabel();
         homeLogin = new javax.swing.JButton();
         homeExit = new javax.swing.JButton();
+        createNewUser = new javax.swing.JButton();
 
         exitDialogBox.setTitle("Are you sure?");
         exitDialogBox.setAlwaysOnTop(true);
@@ -447,6 +456,62 @@ public class HomePage extends javax.swing.JFrame {
                 .addGap(21, 21, 21))
         );
 
+        newUserPosition.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Supervisor", "Secretary", "Meter Reader" }));
+
+        newUserSubmit.setText("Submit");
+        newUserSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newUserSubmitActionPerformed(evt);
+            }
+        });
+
+        jLabel14.setText("Position:");
+
+        jLabel15.setText("Password:");
+
+        jLabel16.setText("Confirm Password:");
+
+        javax.swing.GroupLayout newUserDialogBoxLayout = new javax.swing.GroupLayout(newUserDialogBox.getContentPane());
+        newUserDialogBox.getContentPane().setLayout(newUserDialogBoxLayout);
+        newUserDialogBoxLayout.setHorizontalGroup(
+            newUserDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(newUserDialogBoxLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(newUserDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel14)
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addGroup(newUserDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(newUserConfirmPassword)
+                    .addComponent(newUserPosition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(newUserPassword))
+                .addContainerGap(30, Short.MAX_VALUE))
+            .addGroup(newUserDialogBoxLayout.createSequentialGroup()
+                .addGap(84, 84, 84)
+                .addComponent(newUserSubmit)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        newUserDialogBoxLayout.setVerticalGroup(
+            newUserDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(newUserDialogBoxLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(newUserDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(newUserPosition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14))
+                .addGap(18, 18, 18)
+                .addGroup(newUserDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(newUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15))
+                .addGap(18, 18, 18)
+                .addGroup(newUserDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(newUserConfirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16))
+                .addGap(35, 35, 35)
+                .addComponent(newUserSubmit)
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HomePageFrame");
         setName("HomePageFrame"); // NOI18N
@@ -468,6 +533,13 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
+        createNewUser.setText("Create New User");
+        createNewUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createNewUserActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout homePageLayout = new javax.swing.GroupLayout(homePage);
         homePage.setLayout(homePageLayout);
         homePageLayout.setHorizontalGroup(
@@ -475,11 +547,13 @@ public class HomePage extends javax.swing.JFrame {
             .addGroup(homePageLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(homePageTxt)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
             .addGroup(homePageLayout.createSequentialGroup()
                 .addGap(68, 68, 68)
                 .addComponent(homeLogin)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(createNewUser)
+                .addGap(18, 18, 18)
                 .addComponent(homeExit, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(75, 75, 75))
         );
@@ -491,7 +565,8 @@ public class HomePage extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addGroup(homePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(homeLogin)
-                    .addComponent(homeExit))
+                    .addComponent(homeExit)
+                    .addComponent(createNewUser))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
@@ -563,13 +638,21 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_createAccountBtnActionPerformed
 
     private void createAccountSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAccountSubmitActionPerformed
-        //DO SOMETHING ABOUT THE NEW USER TO BE CREATED
+        //ADD NEW ACCOUNT TO ARRAY OF ACCOUNTS
         createAccountPage.setVisible(false);
     }//GEN-LAST:event_createAccountSubmitActionPerformed
 
     private void meterReadingSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meterReadingSubmitActionPerformed
         //Do something with the information given.
     }//GEN-LAST:event_meterReadingSubmitActionPerformed
+
+    private void createNewUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createNewUserActionPerformed
+        newUserDialogBox.setVisible(true);
+    }//GEN-LAST:event_createNewUserActionPerformed
+
+    private void newUserSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newUserSubmitActionPerformed
+        //ADD NEW USER TO ARRAY OF USERS
+    }//GEN-LAST:event_newUserSubmitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -611,6 +694,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JButton createAccountBtn;
     private javax.swing.JDialog createAccountPage;
     private javax.swing.JButton createAccountSubmit;
+    private javax.swing.JButton createNewUser;
     private javax.swing.JButton emergencyExit;
     private javax.swing.JLabel exitConfirmTxt;
     private javax.swing.JDialog exitDialogBox;
@@ -626,6 +710,9 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -648,6 +735,11 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JTextField newAccountName;
     private javax.swing.JTextField newAccountNumber;
     private javax.swing.JTextField newInitMeterReading;
+    private javax.swing.JPasswordField newUserConfirmPassword;
+    private javax.swing.JDialog newUserDialogBox;
+    private javax.swing.JPasswordField newUserPassword;
+    private javax.swing.JComboBox newUserPosition;
+    private javax.swing.JButton newUserSubmit;
     private javax.swing.JComboBox positionSelection;
     private javax.swing.JDialog secretaryPage;
     private javax.swing.JTextArea selectedAccountInfo;
