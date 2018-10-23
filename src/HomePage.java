@@ -40,6 +40,8 @@ public class HomePage extends javax.swing.JFrame {
         loadingScreen = new javax.swing.JDialog();
         jLabel3 = new javax.swing.JLabel();
         emergencyExit = new javax.swing.JButton();
+        secretaryPage = new javax.swing.JDialog();
+        jLabel4 = new javax.swing.JLabel();
         homePage = new javax.swing.JPanel();
         homePageTxt = new javax.swing.JLabel();
         homeLogin = new javax.swing.JButton();
@@ -91,7 +93,6 @@ public class HomePage extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        loginDialogBox.setPreferredSize(new java.awt.Dimension(455, 155));
         loginDialogBox.setResizable(false);
         loginDialogBox.setSize(new java.awt.Dimension(455, 155));
 
@@ -194,7 +195,30 @@ public class HomePage extends javax.swing.JFrame {
                 .addContainerGap(92, Short.MAX_VALUE))
         );
 
+        secretaryPage.setMinimumSize(new java.awt.Dimension(100, 100));
+
+        jLabel4.setText("Hello! This is the page for the secretary!");
+
+        javax.swing.GroupLayout secretaryPageLayout = new javax.swing.GroupLayout(secretaryPage.getContentPane());
+        secretaryPage.getContentPane().setLayout(secretaryPageLayout);
+        secretaryPageLayout.setHorizontalGroup(
+            secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(secretaryPageLayout.createSequentialGroup()
+                .addGap(106, 106, 106)
+                .addComponent(jLabel4)
+                .addContainerGap(100, Short.MAX_VALUE))
+        );
+        secretaryPageLayout.setVerticalGroup(
+            secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(secretaryPageLayout.createSequentialGroup()
+                .addGap(119, 119, 119)
+                .addComponent(jLabel4)
+                .addContainerGap(167, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("HomePageFrame");
+        setName("HomePageFrame"); // NOI18N
 
         homePageTxt.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         homePageTxt.setText("Valley Falls Water Association");
@@ -282,6 +306,8 @@ public class HomePage extends javax.swing.JFrame {
         homePage.setVisible(false);
         loginDialogBox.setVisible(false);
         loadingScreen.setVisible(true);
+        if(positionSelection.getSelectedItem().toString().equals("Secretary"))
+            secretaryPage.setVisible(true);
     }//GEN-LAST:event_loginSubmitActionPerformed
 
     private void emergencyExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emergencyExitActionPerformed
@@ -336,11 +362,13 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JDialog loadingScreen;
     private javax.swing.JDialog loginDialogBox;
     private javax.swing.JPasswordField loginPasswordField;
     private javax.swing.JButton loginSubmit;
     private javax.swing.JLabel loginTxt;
     private javax.swing.JComboBox positionSelection;
+    private javax.swing.JDialog secretaryPage;
     // End of variables declaration//GEN-END:variables
 }
