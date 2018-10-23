@@ -42,6 +42,10 @@ public class HomePage extends javax.swing.JFrame {
         emergencyExit = new javax.swing.JButton();
         secretaryPage = new javax.swing.JDialog();
         jLabel4 = new javax.swing.JLabel();
+        supervisorPage = new javax.swing.JDialog();
+        jLabel5 = new javax.swing.JLabel();
+        meterReaderPage = new javax.swing.JDialog();
+        jLabel6 = new javax.swing.JLabel();
         homePage = new javax.swing.JPanel();
         homePageTxt = new javax.swing.JLabel();
         homeLogin = new javax.swing.JButton();
@@ -93,6 +97,7 @@ public class HomePage extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        loginDialogBox.setPreferredSize(new java.awt.Dimension(455, 155));
         loginDialogBox.setResizable(false);
         loginDialogBox.setSize(new java.awt.Dimension(455, 155));
 
@@ -216,6 +221,48 @@ public class HomePage extends javax.swing.JFrame {
                 .addContainerGap(167, Short.MAX_VALUE))
         );
 
+        supervisorPage.setMinimumSize(new java.awt.Dimension(100, 100));
+
+        jLabel5.setText("this is the supervisor page");
+
+        javax.swing.GroupLayout supervisorPageLayout = new javax.swing.GroupLayout(supervisorPage.getContentPane());
+        supervisorPage.getContentPane().setLayout(supervisorPageLayout);
+        supervisorPageLayout.setHorizontalGroup(
+            supervisorPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(supervisorPageLayout.createSequentialGroup()
+                .addGap(124, 124, 124)
+                .addComponent(jLabel5)
+                .addContainerGap(150, Short.MAX_VALUE))
+        );
+        supervisorPageLayout.setVerticalGroup(
+            supervisorPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(supervisorPageLayout.createSequentialGroup()
+                .addGap(106, 106, 106)
+                .addComponent(jLabel5)
+                .addContainerGap(180, Short.MAX_VALUE))
+        );
+
+        meterReaderPage.setMinimumSize(new java.awt.Dimension(100, 100));
+
+        jLabel6.setText("this is the meter reader page");
+
+        javax.swing.GroupLayout meterReaderPageLayout = new javax.swing.GroupLayout(meterReaderPage.getContentPane());
+        meterReaderPage.getContentPane().setLayout(meterReaderPageLayout);
+        meterReaderPageLayout.setHorizontalGroup(
+            meterReaderPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(meterReaderPageLayout.createSequentialGroup()
+                .addGap(145, 145, 145)
+                .addComponent(jLabel6)
+                .addContainerGap(116, Short.MAX_VALUE))
+        );
+        meterReaderPageLayout.setVerticalGroup(
+            meterReaderPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(meterReaderPageLayout.createSequentialGroup()
+                .addGap(142, 142, 142)
+                .addComponent(jLabel6)
+                .addContainerGap(144, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HomePageFrame");
         setName("HomePageFrame"); // NOI18N
@@ -306,8 +353,17 @@ public class HomePage extends javax.swing.JFrame {
         homePage.setVisible(false);
         loginDialogBox.setVisible(false);
         loadingScreen.setVisible(true);
-        if(positionSelection.getSelectedItem().toString().equals("Secretary"))
-            secretaryPage.setVisible(true);
+        switch (positionSelection.getSelectedItem().toString()) {
+            case "Secretary":
+                secretaryPage.setVisible(true);
+                break;
+            case "Supervisor":
+                supervisorPage.setVisible(true);
+                break;
+            case "Meter Reader":
+                meterReaderPage.setVisible(true);
+                break;
+        }
     }//GEN-LAST:event_loginSubmitActionPerformed
 
     private void emergencyExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emergencyExitActionPerformed
@@ -363,12 +419,16 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JDialog loadingScreen;
     private javax.swing.JDialog loginDialogBox;
     private javax.swing.JPasswordField loginPasswordField;
     private javax.swing.JButton loginSubmit;
     private javax.swing.JLabel loginTxt;
+    private javax.swing.JDialog meterReaderPage;
     private javax.swing.JComboBox positionSelection;
     private javax.swing.JDialog secretaryPage;
+    private javax.swing.JDialog supervisorPage;
     // End of variables declaration//GEN-END:variables
 }
