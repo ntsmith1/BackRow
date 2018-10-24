@@ -3,13 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  *
  * @author dmich
  */
 public class HomePage extends javax.swing.JFrame {
-
+    
+    public List<Account> accounts = new ArrayList();
+    public List<Secretary> secretaries = new ArrayList();
+    public List<Supervisor> supervisors = new ArrayList();
+    public List<MeterReader> meterReaders = new ArrayList();
+    
     /**
      * Creates new form HomePage
      */
@@ -76,6 +83,12 @@ public class HomePage extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        newUserName = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        passwordMismatchDialog = new javax.swing.JDialog();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        passwordMismatchOK = new javax.swing.JButton();
         homePage = new javax.swing.JPanel();
         homePageTxt = new javax.swing.JLabel();
         homeLogin = new javax.swing.JButton();
@@ -129,7 +142,6 @@ public class HomePage extends javax.swing.JFrame {
         );
 
         loginDialogBox.setMinimumSize(new java.awt.Dimension(455, 155));
-        loginDialogBox.setPreferredSize(new java.awt.Dimension(455, 155));
         loginDialogBox.setResizable(false);
         loginDialogBox.setSize(new java.awt.Dimension(455, 155));
 
@@ -400,11 +412,15 @@ public class HomePage extends javax.swing.JFrame {
         jLabel11.setText("Account #:");
 
         newAccountNumber.setEditable(false);
-        newAccountNumber.setText("[acc. num. here]");
+        newAccountNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newAccountNumberActionPerformed(evt);
+            }
+        });
 
         jLabel12.setText("Meter Type:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "A", "B", "F", "K", "N", "R" }));
 
         jLabel13.setText("Initial Meter Reading:");
 
@@ -478,26 +494,44 @@ public class HomePage extends javax.swing.JFrame {
 
         jLabel16.setText("Confirm Password:");
 
+        newUserName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newUserNameActionPerformed(evt);
+            }
+        });
+
+        jLabel17.setText("Name:");
+
         javax.swing.GroupLayout newUserDialogBoxLayout = new javax.swing.GroupLayout(newUserDialogBox.getContentPane());
         newUserDialogBox.getContentPane().setLayout(newUserDialogBoxLayout);
         newUserDialogBoxLayout.setHorizontalGroup(
             newUserDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(newUserDialogBoxLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addGroup(newUserDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel16))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addGroup(newUserDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(newUserConfirmPassword)
-                    .addComponent(newUserPosition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(newUserPassword))
-                .addContainerGap(30, Short.MAX_VALUE))
-            .addGroup(newUserDialogBoxLayout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addComponent(newUserSubmit)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(newUserDialogBoxLayout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(newUserSubmit))
+                    .addGroup(newUserDialogBoxLayout.createSequentialGroup()
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(newUserConfirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(newUserDialogBoxLayout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(newUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(newUserDialogBoxLayout.createSequentialGroup()
+                        .addGroup(newUserDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel17))
+                        .addGroup(newUserDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(newUserDialogBoxLayout.createSequentialGroup()
+                                .addGap(36, 36, 36)
+                                .addComponent(newUserPosition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(newUserDialogBoxLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(newUserName)))))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         newUserDialogBoxLayout.setVerticalGroup(
             newUserDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -506,7 +540,11 @@ public class HomePage extends javax.swing.JFrame {
                 .addGroup(newUserDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(newUserPosition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(newUserDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(newUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addGroup(newUserDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(newUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel15))
@@ -516,7 +554,50 @@ public class HomePage extends javax.swing.JFrame {
                     .addComponent(jLabel16))
                 .addGap(35, 35, 35)
                 .addComponent(newUserSubmit)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        passwordMismatchDialog.setMinimumSize(new java.awt.Dimension(400, 300));
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel18.setText("ERROR");
+
+        jLabel19.setText("Password confirmation mismatch!");
+
+        passwordMismatchOK.setText("OK");
+        passwordMismatchOK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordMismatchOKActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout passwordMismatchDialogLayout = new javax.swing.GroupLayout(passwordMismatchDialog.getContentPane());
+        passwordMismatchDialog.getContentPane().setLayout(passwordMismatchDialogLayout);
+        passwordMismatchDialogLayout.setHorizontalGroup(
+            passwordMismatchDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(passwordMismatchDialogLayout.createSequentialGroup()
+                .addGroup(passwordMismatchDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(passwordMismatchDialogLayout.createSequentialGroup()
+                        .addGap(144, 144, 144)
+                        .addComponent(jLabel18))
+                    .addGroup(passwordMismatchDialogLayout.createSequentialGroup()
+                        .addGap(103, 103, 103)
+                        .addComponent(jLabel19))
+                    .addGroup(passwordMismatchDialogLayout.createSequentialGroup()
+                        .addGap(155, 155, 155)
+                        .addComponent(passwordMismatchOK)))
+                .addContainerGap(138, Short.MAX_VALUE))
+        );
+        passwordMismatchDialogLayout.setVerticalGroup(
+            passwordMismatchDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(passwordMismatchDialogLayout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addComponent(jLabel18)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel19)
+                .addGap(54, 54, 54)
+                .addComponent(passwordMismatchOK)
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -635,7 +716,7 @@ public class HomePage extends javax.swing.JFrame {
     private void emergencyExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emergencyExitActionPerformed
         System.exit(0);
     }//GEN-LAST:event_emergencyExitActionPerformed
-
+    
     private void accountNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accountNumActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_accountNumActionPerformed
@@ -643,7 +724,13 @@ public class HomePage extends javax.swing.JFrame {
     private void createAccountBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAccountBtnActionPerformed
         createAccountPage.setVisible(true);
     }//GEN-LAST:event_createAccountBtnActionPerformed
-
+    
+    public void createSuper() {
+        Supervisor supervisor = new Supervisor();
+        supervisor.Supervisor(newUserName.getText(), newUserPassword.getPassword());
+        supervisors.add(supervisor);
+    }
+    
     private void createAccountSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAccountSubmitActionPerformed
         //ADD NEW ACCOUNT TO ARRAY OF ACCOUNTS
         createAccountPage.setVisible(false);
@@ -656,10 +743,33 @@ public class HomePage extends javax.swing.JFrame {
     private void createNewUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createNewUserActionPerformed
         newUserDialogBox.setVisible(true);
     }//GEN-LAST:event_createNewUserActionPerformed
-
+   
     private void newUserSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newUserSubmitActionPerformed
-        //ADD NEW USER TO ARRAY OF USERS
+        switch(newUserPosition.getSelectedItem().toString()) {
+            case "Supervisor":
+                createSuper();
+                break;
+            case "Secretary":
+                createSecretary();
+                break;
+            case "Meter Reader":
+                createMeterReader();
+                break;
+        }
+        newUserDialogBox.setVisible(false);
     }//GEN-LAST:event_newUserSubmitActionPerformed
+
+    private void newAccountNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newAccountNumberActionPerformed
+        //TODO
+    }//GEN-LAST:event_newAccountNumberActionPerformed
+
+    private void newUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newUserNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newUserNameActionPerformed
+
+    private void passwordMismatchOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordMismatchOKActionPerformed
+        passwordMismatchDialog.setVisible(false);
+    }//GEN-LAST:event_passwordMismatchOKActionPerformed
 
     /**
      * @param args the command line arguments
@@ -720,6 +830,9 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -744,13 +857,28 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JTextField newInitMeterReading;
     private javax.swing.JPasswordField newUserConfirmPassword;
     private javax.swing.JDialog newUserDialogBox;
+    private javax.swing.JTextField newUserName;
     private javax.swing.JPasswordField newUserPassword;
     private javax.swing.JComboBox newUserPosition;
     private javax.swing.JButton newUserSubmit;
+    private javax.swing.JDialog passwordMismatchDialog;
+    private javax.swing.JButton passwordMismatchOK;
     private javax.swing.JComboBox positionSelection;
     private javax.swing.JDialog secretaryPage;
     private javax.swing.JTextArea selectedAccountInfo;
     private javax.swing.JDialog supervisorPage;
     private javax.swing.JButton viewAccountBtn;
     // End of variables declaration//GEN-END:variables
+
+    public void createMeterReader() {
+        MeterReader mr = new MeterReader();
+        mr.MeterReader(newUserName.getText(), newUserPassword.getPassword());
+        meterReaders.add(mr);
+    }
+
+    public void createSecretary() {
+        Secretary secretary = new Secretary();
+        secretary.Secretary(newUserName.getText(), newUserPassword.getPassword());
+        secretaries.add(secretary);
+    }
 }

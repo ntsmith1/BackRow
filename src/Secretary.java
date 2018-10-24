@@ -11,10 +11,10 @@
 public class Secretary {
     
     public String name;
-    private String password;
+    private char[] password;
     
     //constructor
-    public void Secretary(String name, String password) {
+    public void Secretary(String name, char[] password) {
         this.name = name;
         this.password = password;
     }

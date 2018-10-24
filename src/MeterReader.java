@@ -11,10 +11,10 @@
 public class MeterReader {
     
     public String name;
-    private String password;
+    private char[] password;
     
     //constructor
-    public void MeterReader(String name, String password) {
+    public void MeterReader(String name, char[] password) {
         this.name = name;
         this.password = password;
     }

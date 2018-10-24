@@ -12,12 +12,13 @@ public class Account {
     
     public String name;
     public String meterType;
-    public long accountID;
+    public int accountID;
     
     //constructor
-    public void Account(String name, String meterType, long accountID) {
+    public void Account(String name, String meterType, int accountID) {
         this.name = name;
         this.meterType = meterType;
         this.accountID = accountID;
     }
+
 }

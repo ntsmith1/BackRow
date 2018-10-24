@@ -11,10 +11,10 @@
 public class Supervisor {
     
     public String name;
-    private String password;
+    private char[] password;
     
     //constructor
-    public void Supervisor(String name, String password) {
+    public void Supervisor(String name, char[] password) {
         this.name = name;
         this.password = password;
     }
