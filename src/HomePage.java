@@ -44,6 +44,7 @@ public class HomePage extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         loginSubmit = new javax.swing.JButton();
+        loginReturnHome = new javax.swing.JButton();
         loadingScreen = new javax.swing.JDialog();
         jLabel3 = new javax.swing.JLabel();
         emergencyExit = new javax.swing.JButton();
@@ -83,6 +84,18 @@ public class HomePage extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         newUserName = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
+        passwordIncorrectDialog = new javax.swing.JDialog();
+        jLabel16 = new javax.swing.JLabel();
+        incorrectPasswordOK = new javax.swing.JButton();
+        noSecretariesExist = new javax.swing.JDialog();
+        jLabel18 = new javax.swing.JLabel();
+        noSecretariesOK = new javax.swing.JButton();
+        noMeterReadersExist = new javax.swing.JDialog();
+        jLabel19 = new javax.swing.JLabel();
+        noMeterReadersOK = new javax.swing.JButton();
+        noSupervisorsExist = new javax.swing.JDialog();
+        jLabel20 = new javax.swing.JLabel();
+        noSupervisorsOK = new javax.swing.JButton();
         homePage = new javax.swing.JPanel();
         homePageTxt = new javax.swing.JLabel();
         homeLogin = new javax.swing.JButton();
@@ -136,6 +149,7 @@ public class HomePage extends javax.swing.JFrame {
         );
 
         loginDialogBox.setMinimumSize(new java.awt.Dimension(455, 155));
+        loginDialogBox.setPreferredSize(new java.awt.Dimension(455, 155));
         loginDialogBox.setResizable(false);
         loginDialogBox.setSize(new java.awt.Dimension(455, 155));
 
@@ -161,6 +175,13 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
+        loginReturnHome.setText("Return to Home");
+        loginReturnHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginReturnHomeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout loginDialogBoxLayout = new javax.swing.GroupLayout(loginDialogBox.getContentPane());
         loginDialogBox.getContentPane().setLayout(loginDialogBoxLayout);
         loginDialogBoxLayout.setHorizontalGroup(
@@ -168,12 +189,17 @@ public class HomePage extends javax.swing.JFrame {
             .addGroup(loginDialogBoxLayout.createSequentialGroup()
                 .addGroup(loginDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(loginDialogBoxLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(positionSelection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(59, 59, 59)
-                        .addComponent(jLabel1)
+                        .addGroup(loginDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(loginDialogBoxLayout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(positionSelection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(59, 59, 59)
+                                .addComponent(jLabel1))
+                            .addGroup(loginDialogBoxLayout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addComponent(loginReturnHome)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(loginDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(loginPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -197,7 +223,9 @@ public class HomePage extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
-                .addComponent(loginSubmit)
+                .addGroup(loginDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(loginSubmit)
+                    .addComponent(loginReturnHome))
                 .addContainerGap())
         );
 
@@ -541,6 +569,138 @@ public class HomePage extends javax.swing.JFrame {
                 .addGap(66, 66, 66))
         );
 
+        jLabel16.setText("PASSWORD INCORRECT!");
+
+        incorrectPasswordOK.setText("OK");
+        incorrectPasswordOK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                incorrectPasswordOKActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout passwordIncorrectDialogLayout = new javax.swing.GroupLayout(passwordIncorrectDialog.getContentPane());
+        passwordIncorrectDialog.getContentPane().setLayout(passwordIncorrectDialogLayout);
+        passwordIncorrectDialogLayout.setHorizontalGroup(
+            passwordIncorrectDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(passwordIncorrectDialogLayout.createSequentialGroup()
+                .addGroup(passwordIncorrectDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(passwordIncorrectDialogLayout.createSequentialGroup()
+                        .addGap(140, 140, 140)
+                        .addComponent(jLabel16))
+                    .addGroup(passwordIncorrectDialogLayout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addComponent(incorrectPasswordOK)))
+                .addContainerGap(137, Short.MAX_VALUE))
+        );
+        passwordIncorrectDialogLayout.setVerticalGroup(
+            passwordIncorrectDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(passwordIncorrectDialogLayout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addComponent(jLabel16)
+                .addGap(37, 37, 37)
+                .addComponent(incorrectPasswordOK)
+                .addContainerGap(173, Short.MAX_VALUE))
+        );
+
+        jLabel18.setText("NO SECRETARIES HAVE BEEN ENTERED IN THE SYSTEM");
+
+        noSecretariesOK.setText("OK");
+        noSecretariesOK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                noSecretariesOKActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout noSecretariesExistLayout = new javax.swing.GroupLayout(noSecretariesExist.getContentPane());
+        noSecretariesExist.getContentPane().setLayout(noSecretariesExistLayout);
+        noSecretariesExistLayout.setHorizontalGroup(
+            noSecretariesExistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(noSecretariesExistLayout.createSequentialGroup()
+                .addGroup(noSecretariesExistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(noSecretariesExistLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel18))
+                    .addGroup(noSecretariesExistLayout.createSequentialGroup()
+                        .addGap(135, 135, 135)
+                        .addComponent(noSecretariesOK)))
+                .addContainerGap(82, Short.MAX_VALUE))
+        );
+        noSecretariesExistLayout.setVerticalGroup(
+            noSecretariesExistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(noSecretariesExistLayout.createSequentialGroup()
+                .addGap(95, 95, 95)
+                .addComponent(jLabel18)
+                .addGap(56, 56, 56)
+                .addComponent(noSecretariesOK)
+                .addContainerGap(112, Short.MAX_VALUE))
+        );
+
+        jLabel19.setText("NO METER READERS ARE IN THE SYSTEM!");
+
+        noMeterReadersOK.setText("OK");
+        noMeterReadersOK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                noMeterReadersOKActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout noMeterReadersExistLayout = new javax.swing.GroupLayout(noMeterReadersExist.getContentPane());
+        noMeterReadersExist.getContentPane().setLayout(noMeterReadersExistLayout);
+        noMeterReadersExistLayout.setHorizontalGroup(
+            noMeterReadersExistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(noMeterReadersExistLayout.createSequentialGroup()
+                .addGroup(noMeterReadersExistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(noMeterReadersExistLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel19))
+                    .addGroup(noMeterReadersExistLayout.createSequentialGroup()
+                        .addGap(128, 128, 128)
+                        .addComponent(noMeterReadersOK)))
+                .addContainerGap(168, Short.MAX_VALUE))
+        );
+        noMeterReadersExistLayout.setVerticalGroup(
+            noMeterReadersExistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(noMeterReadersExistLayout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addComponent(jLabel19)
+                .addGap(81, 81, 81)
+                .addComponent(noMeterReadersOK)
+                .addContainerGap(105, Short.MAX_VALUE))
+        );
+
+        jLabel20.setText("NO SUPERVISORS ARE IN THE SYSTEM");
+
+        noSupervisorsOK.setText("OK");
+        noSupervisorsOK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                noSupervisorsOKActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout noSupervisorsExistLayout = new javax.swing.GroupLayout(noSupervisorsExist.getContentPane());
+        noSupervisorsExist.getContentPane().setLayout(noSupervisorsExistLayout);
+        noSupervisorsExistLayout.setHorizontalGroup(
+            noSupervisorsExistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(noSupervisorsExistLayout.createSequentialGroup()
+                .addGroup(noSupervisorsExistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(noSupervisorsExistLayout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addComponent(jLabel20))
+                    .addGroup(noSupervisorsExistLayout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addComponent(noSupervisorsOK)))
+                .addContainerGap(150, Short.MAX_VALUE))
+        );
+        noSupervisorsExistLayout.setVerticalGroup(
+            noSupervisorsExistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(noSupervisorsExistLayout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addComponent(jLabel20)
+                .addGap(88, 88, 88)
+                .addComponent(noSupervisorsOK)
+                .addContainerGap(114, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HomePageFrame");
         setName("HomePageFrame"); // NOI18N
@@ -637,19 +797,79 @@ public class HomePage extends javax.swing.JFrame {
         //Password must match that of one with existing account
     }//GEN-LAST:event_loginPasswordFieldActionPerformed
 
+    public boolean passwordLegit(String password) {
+        boolean flag = false;
+        switch (positionSelection.getSelectedItem().toString()) {
+            case "Secretary":
+                for (int i = 0; i < secretaries.size(); i++) {
+                    if (charArrayToString(secretaries.get(i).password).equals(password)) {
+                        flag = true;
+                    } else {
+                        flag = false;
+                    }
+                }
+            case "Supervisor":
+                for (int i = 0; i < supervisors.size(); i++) {
+                    if (charArrayToString(supervisors.get(i).password).equals(password)) {
+                        flag = true;
+                    } else {
+                        flag = false;
+                    }
+                }
+            case "Meter Reader":
+                for (int i = 0; i < meterReaders.size(); i++) {
+                    if (charArrayToString(meterReaders.get(i).password).equals(password)) {
+                        flag = true;
+                    } else {
+                        flag = false;
+                    }
+                }
+        }
+        return flag;
+    }
+    
+    public String charArrayToString(char[] array) {
+        String string = new String(array);
+        return string;
+    }
+    
     private void loginSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginSubmitActionPerformed
         homePage.setVisible(false);
         loginDialogBox.setVisible(false);
         loadingScreen.setVisible(true);
         switch (positionSelection.getSelectedItem().toString()) {
             case "Secretary":
-                secretaryPage.setVisible(true);
+                if (secretaries.isEmpty()) {
+                    noSecretariesExist.setVisible(true);
+                    break;
+                }
+                if(passwordLegit(charArrayToString(loginPasswordField.getPassword()))) {
+                    secretaryPage.setVisible(true);
+                } else {
+                    passwordIncorrectDialog.setVisible(true);
+                }
                 break;
             case "Supervisor":
-                supervisorPage.setVisible(true);
+                if (supervisors.isEmpty()) {
+                    noSupervisorsExist.setVisible(true);
+                    break;
+                }
+                if(passwordLegit(charArrayToString(loginPasswordField.getPassword()))) {
+                    supervisorPage.setVisible(true);
+                } else {
+                    passwordIncorrectDialog.setVisible(true);
+                }
                 break;
             case "Meter Reader":
-                meterReaderPage.setVisible(true);
+                if (meterReaders.isEmpty()) {
+                    noMeterReadersExist.setVisible(true);
+                    break;
+                }
+                if(passwordLegit(charArrayToString(loginPasswordField.getPassword()))) {
+                    meterReaderPage.setVisible(true);
+                } else {
+                    passwordIncorrectDialog.setVisible(true);
+                }
                 break;
         }
     }//GEN-LAST:event_loginSubmitActionPerformed
@@ -710,6 +930,33 @@ public class HomePage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_newUserNameActionPerformed
 
+    private void incorrectPasswordOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incorrectPasswordOKActionPerformed
+        passwordIncorrectDialog.setVisible(false);
+    }//GEN-LAST:event_incorrectPasswordOKActionPerformed
+
+    private void noSecretariesOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noSecretariesOKActionPerformed
+        noSecretariesExist.setVisible(false);
+        loadingScreen.setVisible(false);
+        loginDialogBox.setVisible(true);
+    }//GEN-LAST:event_noSecretariesOKActionPerformed
+
+    private void noMeterReadersOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noMeterReadersOKActionPerformed
+        noMeterReadersExist.setVisible(false);
+        loadingScreen.setVisible(false);
+        loginDialogBox.setVisible(true);
+    }//GEN-LAST:event_noMeterReadersOKActionPerformed
+
+    private void noSupervisorsOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noSupervisorsOKActionPerformed
+        noSupervisorsExist.setVisible(false);
+        loadingScreen.setVisible(false);
+        loginDialogBox.setVisible(true);
+    }//GEN-LAST:event_noSupervisorsOKActionPerformed
+
+    private void loginReturnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginReturnHomeActionPerformed
+        loginDialogBox.setVisible(false);
+        homePage.setVisible(true);
+    }//GEN-LAST:event_loginReturnHomeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -760,6 +1007,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JButton homeLogin;
     private javax.swing.JPanel homePage;
     private javax.swing.JLabel homePageTxt;
+    private javax.swing.JButton incorrectPasswordOK;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -768,8 +1016,12 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -782,6 +1034,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JDialog loadingScreen;
     private javax.swing.JDialog loginDialogBox;
     private javax.swing.JPasswordField loginPasswordField;
+    private javax.swing.JButton loginReturnHome;
     private javax.swing.JButton loginSubmit;
     private javax.swing.JLabel loginTxt;
     private javax.swing.JTextField meterEntryAccountNum;
@@ -796,6 +1049,13 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JPasswordField newUserPassword;
     private javax.swing.JComboBox newUserPosition;
     private javax.swing.JButton newUserSubmit;
+    private javax.swing.JDialog noMeterReadersExist;
+    private javax.swing.JButton noMeterReadersOK;
+    private javax.swing.JDialog noSecretariesExist;
+    private javax.swing.JButton noSecretariesOK;
+    private javax.swing.JDialog noSupervisorsExist;
+    private javax.swing.JButton noSupervisorsOK;
+    private javax.swing.JDialog passwordIncorrectDialog;
     private javax.swing.JComboBox positionSelection;
     private javax.swing.JDialog secretaryPage;
     private javax.swing.JTextArea selectedAccountInfo;

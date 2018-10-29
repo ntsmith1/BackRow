@@ -11,7 +11,7 @@
 public class Supervisor {
     
     public String name;
-    private char[] password;
+    public char[] password;
     
     //constructor
     public void Supervisor(String name, char[] password) {

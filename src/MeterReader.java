@@ -11,7 +11,7 @@
 public class MeterReader {
     
     public String name;
-    private char[] password;
+    public char[] password;
     
     //constructor
     public void MeterReader(String name, char[] password) {
