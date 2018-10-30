@@ -962,6 +962,7 @@ public class HomePage extends javax.swing.JFrame {
         newAccount.Account(newAccountName.getText(), jComboBox1.getSelectedItem().toString(), newAccNumGen());
         accounts.add(newAccount);
         createAccountPage.setVisible(false);
+        newAccountNumber.setText(String.valueOf(newAccNumGen()));
     }//GEN-LAST:event_createAccountSubmitActionPerformed
 
     private void meterReadingSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meterReadingSubmitActionPerformed
@@ -1176,12 +1177,11 @@ public class HomePage extends javax.swing.JFrame {
     }
     
     public int newAccNumGen() {
-        int value = 1;
         if (accounts.isEmpty()) {
-            return value;
+            return 1;
         } else {
-            value = (accounts.get(accounts.size()-1).accountID + 1);
+            int prevID = accounts.get(accounts.size()-1).accountID;
+            return (prevID + 1);
         }
-        return value;
     }
 }
