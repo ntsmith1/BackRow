@@ -54,8 +54,10 @@ public class HomePage extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         accountNum = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        secretaryLogOut = new javax.swing.JButton();
         supervisorPage = new javax.swing.JDialog();
         jLabel9 = new javax.swing.JLabel();
+        superLogOut = new javax.swing.JButton();
         meterReaderPage = new javax.swing.JDialog();
         meterEntryAccountNum = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -66,6 +68,7 @@ public class HomePage extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         selectedAccountInfo = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
+        meterReaderLogOut = new javax.swing.JButton();
         createAccountPage = new javax.swing.JDialog();
         createAccountSubmit = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
@@ -76,6 +79,7 @@ public class HomePage extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox();
         jLabel13 = new javax.swing.JLabel();
         newInitMeterReading = new javax.swing.JTextField();
+        createAccountCancel = new javax.swing.JButton();
         newUserDialogBox = new javax.swing.JDialog();
         newUserPosition = new javax.swing.JComboBox();
         newUserPassword = new javax.swing.JPasswordField();
@@ -84,6 +88,7 @@ public class HomePage extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         newUserName = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         passwordIncorrectDialog = new javax.swing.JDialog();
         jLabel16 = new javax.swing.JLabel();
         incorrectPasswordOK = new javax.swing.JButton();
@@ -288,15 +293,24 @@ public class HomePage extends javax.swing.JFrame {
 
         jLabel4.setText("OTHER THINGS WITH COSTS AND STUFF");
 
+        secretaryLogOut.setText("Log Out");
+        secretaryLogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                secretaryLogOutActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout secretaryPageLayout = new javax.swing.GroupLayout(secretaryPage.getContentPane());
         secretaryPage.getContentPane().setLayout(secretaryPageLayout);
         secretaryPageLayout.setHorizontalGroup(
             secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(secretaryPageLayout.createSequentialGroup()
-                .addGroup(secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, secretaryPageLayout.createSequentialGroup()
+                .addGroup(secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(secretaryPageLayout.createSequentialGroup()
                         .addGap(34, 34, 34)
-                        .addComponent(createAccountBtn))
+                        .addComponent(createAccountBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(secretaryLogOut))
                     .addGroup(secretaryPageLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel5)
@@ -313,7 +327,9 @@ public class HomePage extends javax.swing.JFrame {
             secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(secretaryPageLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(createAccountBtn)
+                .addGroup(secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(createAccountBtn)
+                    .addComponent(secretaryLogOut))
                 .addGap(18, 18, 18)
                 .addGroup(secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(viewAccountBtn)
@@ -331,6 +347,14 @@ public class HomePage extends javax.swing.JFrame {
         jLabel9.setMinimumSize(new java.awt.Dimension(500, 500));
         jLabel9.setPreferredSize(new java.awt.Dimension(500, 500));
 
+        superLogOut.setText("Log Out");
+        superLogOut.setToolTipText("");
+        superLogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                superLogOutActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout supervisorPageLayout = new javax.swing.GroupLayout(supervisorPage.getContentPane());
         supervisorPage.getContentPane().setLayout(supervisorPageLayout);
         supervisorPageLayout.setHorizontalGroup(
@@ -339,11 +363,17 @@ public class HomePage extends javax.swing.JFrame {
                 .addGap(167, 167, 167)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(170, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, supervisorPageLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(superLogOut)
+                .addGap(221, 221, 221))
         );
         supervisorPageLayout.setVerticalGroup(
             supervisorPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(supervisorPageLayout.createSequentialGroup()
-                .addGap(130, 130, 130)
+                .addGap(27, 27, 27)
+                .addComponent(superLogOut)
+                .addGap(80, 80, 80)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(153, Short.MAX_VALUE))
         );
@@ -370,22 +400,17 @@ public class HomePage extends javax.swing.JFrame {
 
         jLabel6.setText("METER READER PAGE");
 
+        meterReaderLogOut.setText("Log Out");
+        meterReaderLogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                meterReaderLogOutActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout meterReaderPageLayout = new javax.swing.GroupLayout(meterReaderPage.getContentPane());
         meterReaderPage.getContentPane().setLayout(meterReaderPageLayout);
         meterReaderPageLayout.setHorizontalGroup(
             meterReaderPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(meterReaderPageLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(meterReaderPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8))
-                .addGap(37, 37, 37)
-                .addGroup(meterReaderPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(meterReading, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
-                    .addComponent(meterEntryAccountNum))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(loadAccountInfo)
-                .addGap(24, 24, 24))
             .addGroup(meterReaderPageLayout.createSequentialGroup()
                 .addGroup(meterReaderPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(meterReaderPageLayout.createSequentialGroup()
@@ -398,6 +423,23 @@ public class HomePage extends javax.swing.JFrame {
                         .addGap(174, 174, 174)
                         .addComponent(jLabel6)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, meterReaderPageLayout.createSequentialGroup()
+                .addGroup(meterReaderPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(meterReaderPageLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(meterReaderLogOut))
+                    .addGroup(meterReaderPageLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(meterReaderPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8))
+                        .addGap(37, 37, 37)
+                        .addGroup(meterReaderPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(meterReading, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+                            .addComponent(meterEntryAccountNum))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(loadAccountInfo)))
+                .addGap(24, 24, 24))
         );
         meterReaderPageLayout.setVerticalGroup(
             meterReaderPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -414,7 +456,9 @@ public class HomePage extends javax.swing.JFrame {
                     .addComponent(meterReading, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addGap(30, 30, 30)
-                .addComponent(meterReadingSubmit)
+                .addGroup(meterReaderPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(meterReadingSubmit)
+                    .addComponent(meterReaderLogOut))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -447,12 +491,21 @@ public class HomePage extends javax.swing.JFrame {
 
         jLabel13.setText("Initial Meter Reading:");
 
+        createAccountCancel.setText("Cancel");
+        createAccountCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createAccountCancelActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout createAccountPageLayout = new javax.swing.GroupLayout(createAccountPage.getContentPane());
         createAccountPage.getContentPane().setLayout(createAccountPageLayout);
         createAccountPageLayout.setHorizontalGroup(
             createAccountPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, createAccountPageLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(30, 30, 30)
+                .addComponent(createAccountCancel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(createAccountSubmit)
                 .addGap(46, 46, 46))
             .addGroup(createAccountPageLayout.createSequentialGroup()
@@ -496,7 +549,9 @@ public class HomePage extends javax.swing.JFrame {
                     .addComponent(jLabel13)
                     .addComponent(newInitMeterReading, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
-                .addComponent(createAccountSubmit)
+                .addGroup(createAccountPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(createAccountSubmit)
+                    .addComponent(createAccountCancel))
                 .addGap(21, 21, 21))
         );
 
@@ -523,6 +578,13 @@ public class HomePage extends javax.swing.JFrame {
 
         jLabel17.setText("Name:");
 
+        jButton1.setText("Cancel");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout newUserDialogBoxLayout = new javax.swing.GroupLayout(newUserDialogBox.getContentPane());
         newUserDialogBox.getContentPane().setLayout(newUserDialogBoxLayout);
         newUserDialogBoxLayout.setHorizontalGroup(
@@ -546,7 +608,8 @@ public class HomePage extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(newUserDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(newUserSubmit)
-                            .addComponent(newUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(newUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1))))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         newUserDialogBoxLayout.setVerticalGroup(
@@ -566,7 +629,9 @@ public class HomePage extends javax.swing.JFrame {
                     .addComponent(jLabel15))
                 .addGap(18, 18, 18)
                 .addComponent(newUserSubmit)
-                .addGap(66, 66, 66))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addGap(25, 25, 25))
         );
 
         jLabel16.setText("PASSWORD INCORRECT!");
@@ -932,6 +997,8 @@ public class HomePage extends javax.swing.JFrame {
 
     private void incorrectPasswordOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incorrectPasswordOKActionPerformed
         passwordIncorrectDialog.setVisible(false);
+        loadingScreen.setVisible(false);
+        loginDialogBox.setVisible(true);
     }//GEN-LAST:event_incorrectPasswordOKActionPerformed
 
     private void noSecretariesOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noSecretariesOKActionPerformed
@@ -956,6 +1023,34 @@ public class HomePage extends javax.swing.JFrame {
         loginDialogBox.setVisible(false);
         homePage.setVisible(true);
     }//GEN-LAST:event_loginReturnHomeActionPerformed
+
+    private void secretaryLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_secretaryLogOutActionPerformed
+        secretaryPage.setVisible(false);
+        loadingScreen.setVisible(false);
+        homePage.setVisible(true);
+    }//GEN-LAST:event_secretaryLogOutActionPerformed
+
+    private void superLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_superLogOutActionPerformed
+        supervisorPage.setVisible(false);
+        loadingScreen.setVisible(false);
+        homePage.setVisible(true);
+    }//GEN-LAST:event_superLogOutActionPerformed
+
+    private void meterReaderLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meterReaderLogOutActionPerformed
+        meterReaderPage.setVisible(false);
+        loadingScreen.setVisible(false);
+        homePage.setVisible(true);
+    }//GEN-LAST:event_meterReaderLogOutActionPerformed
+
+    private void createAccountCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAccountCancelActionPerformed
+        createAccountPage.setVisible(false);
+    }//GEN-LAST:event_createAccountCancelActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        newUserDialogBox.setVisible(false);
+        loadingScreen.setVisible(false);
+        homePage.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -995,6 +1090,7 @@ public class HomePage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField accountNum;
     private javax.swing.JButton createAccountBtn;
+    private javax.swing.JButton createAccountCancel;
     private javax.swing.JDialog createAccountPage;
     private javax.swing.JButton createAccountSubmit;
     private javax.swing.JButton createNewUser;
@@ -1008,6 +1104,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JPanel homePage;
     private javax.swing.JLabel homePageTxt;
     private javax.swing.JButton incorrectPasswordOK;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1038,6 +1135,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JButton loginSubmit;
     private javax.swing.JLabel loginTxt;
     private javax.swing.JTextField meterEntryAccountNum;
+    private javax.swing.JButton meterReaderLogOut;
     private javax.swing.JDialog meterReaderPage;
     private javax.swing.JTextField meterReading;
     private javax.swing.JButton meterReadingSubmit;
@@ -1057,8 +1155,10 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JButton noSupervisorsOK;
     private javax.swing.JDialog passwordIncorrectDialog;
     private javax.swing.JComboBox positionSelection;
+    private javax.swing.JButton secretaryLogOut;
     private javax.swing.JDialog secretaryPage;
     private javax.swing.JTextArea selectedAccountInfo;
+    private javax.swing.JButton superLogOut;
     private javax.swing.JDialog supervisorPage;
     private javax.swing.JButton viewAccountBtn;
     // End of variables declaration//GEN-END:variables
