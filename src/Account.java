@@ -33,7 +33,7 @@ public class Account {
     }
 
     public int setGallonsUsed() {
-        if (readings.isEmpty()) {
+        if (readings == null || readings.isEmpty()) {
             return 0;
         } else if (readings.size() == 1) {
             return readings.get(0);

@@ -47,6 +47,8 @@ public class HomePage extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         loginSubmit = new javax.swing.JButton();
         loginReturnHome = new javax.swing.JButton();
+        jLabel24 = new javax.swing.JLabel();
+        loginName = new javax.swing.JTextField();
         loadingScreen = new javax.swing.JDialog();
         jLabel3 = new javax.swing.JLabel();
         emergencyExit = new javax.swing.JButton();
@@ -57,6 +59,7 @@ public class HomePage extends javax.swing.JFrame {
         accountNum = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         secretaryLogOut = new javax.swing.JButton();
+        secretaryImport = new javax.swing.JButton();
         supervisorPage = new javax.swing.JDialog();
         jLabel9 = new javax.swing.JLabel();
         superLogOut = new javax.swing.JButton();
@@ -162,12 +165,12 @@ public class HomePage extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        loginDialogBox.setMinimumSize(new java.awt.Dimension(455, 155));
-        loginDialogBox.setPreferredSize(new java.awt.Dimension(455, 155));
+        loginDialogBox.setMinimumSize(new java.awt.Dimension(475, 175));
+        loginDialogBox.setPreferredSize(new java.awt.Dimension(475, 175));
         loginDialogBox.setResizable(false);
         loginDialogBox.setSize(new java.awt.Dimension(455, 155));
 
-        loginTxt.setText("Please select your position from the drop-down box and provide your password.");
+        loginTxt.setText("Please select your position from the drop-down box and provide your name and password.");
 
         positionSelection.setMaximumRowCount(3);
         positionSelection.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Supervisor", "Secretary", "Meter Reader" }));
@@ -196,6 +199,8 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
+        jLabel24.setText("Name:");
+
         javax.swing.GroupLayout loginDialogBoxLayout = new javax.swing.GroupLayout(loginDialogBox.getContentPane());
         loginDialogBox.getContentPane().setLayout(loginDialogBoxLayout);
         loginDialogBoxLayout.setHorizontalGroup(
@@ -203,40 +208,53 @@ public class HomePage extends javax.swing.JFrame {
             .addGroup(loginDialogBoxLayout.createSequentialGroup()
                 .addGroup(loginDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(loginDialogBoxLayout.createSequentialGroup()
-                        .addGroup(loginDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addContainerGap()
+                        .addComponent(loginTxt))
+                    .addGroup(loginDialogBoxLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(loginDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(loginReturnHome)
                             .addGroup(loginDialogBoxLayout.createSequentialGroup()
-                                .addGap(20, 20, 20)
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(positionSelection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(59, 59, 59)
-                                .addComponent(jLabel1))
-                            .addGroup(loginDialogBoxLayout.createSequentialGroup()
-                                .addGap(50, 50, 50)
-                                .addComponent(loginReturnHome)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(positionSelection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(loginDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(loginPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(loginDialogBoxLayout.createSequentialGroup()
+                                .addGap(137, 137, 137)
+                                .addComponent(loginSubmit))
+                            .addGroup(loginDialogBoxLayout.createSequentialGroup()
+                                .addGap(54, 54, 54)
+                                .addComponent(jLabel24))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginDialogBoxLayout.createSequentialGroup()
-                                .addComponent(loginSubmit)
-                                .addGap(24, 24, 24))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginDialogBoxLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(loginTxt)))
-                .addContainerGap(60, Short.MAX_VALUE))
+                                .addGap(54, 54, 54)
+                                .addGroup(loginDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(loginName, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(loginDialogBoxLayout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(loginPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(12, 12, 12)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         loginDialogBoxLayout.setVerticalGroup(
             loginDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(loginDialogBoxLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(loginTxt)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(loginDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(positionSelection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(loginPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(loginDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(loginDialogBoxLayout.createSequentialGroup()
+                        .addGroup(loginDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel24)
+                            .addComponent(loginName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(loginDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(loginPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)))
+                    .addGroup(loginDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(positionSelection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(loginDialogBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(loginSubmit)
                     .addComponent(loginReturnHome))
@@ -309,28 +327,40 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
+        secretaryImport.setText("Import Meter Readings");
+        secretaryImport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                secretaryImportActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout secretaryPageLayout = new javax.swing.GroupLayout(secretaryPage.getContentPane());
         secretaryPage.getContentPane().setLayout(secretaryPageLayout);
         secretaryPageLayout.setHorizontalGroup(
             secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(secretaryPageLayout.createSequentialGroup()
-                .addGroup(secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(secretaryPageLayout.createSequentialGroup()
+                        .addGroup(secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(secretaryPageLayout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addComponent(jLabel4)
+                                .addGap(26, 26, 26))
+                            .addGroup(secretaryPageLayout.createSequentialGroup()
+                                .addGap(34, 34, 34)
+                                .addComponent(createAccountBtn)
+                                .addGap(29, 29, 29)
+                                .addComponent(secretaryLogOut)
+                                .addGap(18, 18, 18)))
+                        .addComponent(secretaryImport))
                     .addGroup(secretaryPageLayout.createSequentialGroup()
                         .addGap(34, 34, 34)
-                        .addComponent(createAccountBtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(secretaryLogOut))
-                    .addGroup(secretaryPageLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addGroup(secretaryPageLayout.createSequentialGroup()
-                                .addComponent(accountNum, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(viewAccountBtn)))))
-                .addContainerGap(175, Short.MAX_VALUE))
+                        .addComponent(accountNum, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(viewAccountBtn)))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         secretaryPageLayout.setVerticalGroup(
             secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -338,7 +368,8 @@ public class HomePage extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addGroup(secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(createAccountBtn)
-                    .addComponent(secretaryLogOut))
+                    .addComponent(secretaryLogOut)
+                    .addComponent(secretaryImport))
                 .addGap(18, 18, 18)
                 .addGroup(secretaryPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(viewAccountBtn)
@@ -924,12 +955,12 @@ public class HomePage extends javax.swing.JFrame {
         //Password must match that of one with existing account
     }//GEN-LAST:event_loginPasswordFieldActionPerformed
 
-    public boolean passwordLegit(String password) {
+    public boolean passwordLegit(String password, String name) {
         boolean flag = false;
         switch (positionSelection.getSelectedItem().toString()) {
             case "Secretary":
                 for (int i = 0; i < secretaries.size(); i++) {
-                    if (charArrayToString(secretaries.get(i).password).equals(password)) {
+                    if (charArrayToString(secretaries.get(i).password).equals(password) && secretaries.get(i).name.equals(name)) {
                         flag = true;
                     } else {
                         flag = false;
@@ -937,7 +968,7 @@ public class HomePage extends javax.swing.JFrame {
                 }
             case "Supervisor":
                 for (int i = 0; i < supervisors.size(); i++) {
-                    if (charArrayToString(supervisors.get(i).password).equals(password)) {
+                    if (charArrayToString(supervisors.get(i).password).equals(password) && supervisors.get(i).name.equals(name)) {
                         flag = true;
                     } else {
                         flag = false;
@@ -945,7 +976,7 @@ public class HomePage extends javax.swing.JFrame {
                 }
             case "Meter Reader":
                 for (int i = 0; i < meterReaders.size(); i++) {
-                    if (charArrayToString(meterReaders.get(i).password).equals(password)) {
+                    if (charArrayToString(meterReaders.get(i).password).equals(password) && meterReaders.get(i).name.equals(name)) {
                         flag = true;
                     } else {
                         flag = false;
@@ -970,7 +1001,7 @@ public class HomePage extends javax.swing.JFrame {
                     noSecretariesExist.setVisible(true);
                     break;
                 }
-                if(passwordLegit(charArrayToString(loginPasswordField.getPassword()))) {
+                if(passwordLegit(charArrayToString(loginPasswordField.getPassword()), loginName.getText())) {
                     secretaryPage.setVisible(true);
                 } else {
                     passwordIncorrectDialog.setVisible(true);
@@ -981,7 +1012,7 @@ public class HomePage extends javax.swing.JFrame {
                     noSupervisorsExist.setVisible(true);
                     break;
                 }
-                if(passwordLegit(charArrayToString(loginPasswordField.getPassword()))) {
+                if(passwordLegit(charArrayToString(loginPasswordField.getPassword()), loginName.getText())) {
                     supervisorPage.setVisible(true);
                 } else {
                     passwordIncorrectDialog.setVisible(true);
@@ -992,7 +1023,7 @@ public class HomePage extends javax.swing.JFrame {
                     noMeterReadersExist.setVisible(true);
                     break;
                 }
-                if(passwordLegit(charArrayToString(loginPasswordField.getPassword()))) {
+                if(passwordLegit(charArrayToString(loginPasswordField.getPassword()), loginName.getText())) {
                     meterReaderPage.setVisible(true);
                 } else {
                     passwordIncorrectDialog.setVisible(true);
@@ -1123,6 +1154,10 @@ public class HomePage extends javax.swing.JFrame {
         enterAllDataDialog.setVisible(false);
     }//GEN-LAST:event_enterAllDataOKActionPerformed
 
+    private void secretaryImportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_secretaryImportActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_secretaryImportActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1195,6 +1230,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1206,6 +1242,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JButton loadAccountInfo;
     private javax.swing.JDialog loadingScreen;
     private javax.swing.JDialog loginDialogBox;
+    private javax.swing.JTextField loginName;
     private javax.swing.JPasswordField loginPasswordField;
     private javax.swing.JButton loginReturnHome;
     private javax.swing.JButton loginSubmit;
@@ -1233,6 +1270,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JButton noSupervisorsOK;
     private javax.swing.JDialog passwordIncorrectDialog;
     private javax.swing.JComboBox positionSelection;
+    private javax.swing.JButton secretaryImport;
     private javax.swing.JButton secretaryLogOut;
     private javax.swing.JDialog secretaryPage;
     private javax.swing.JTextArea selectedAccountInfo;
