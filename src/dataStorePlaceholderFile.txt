@@ -1,3 +1,0 @@
-This is just a place holder for the data store. It doesn't have to be a .txt
-file, but it may be the easiest thing to work with until we can figure out how
-to implement an excel file.

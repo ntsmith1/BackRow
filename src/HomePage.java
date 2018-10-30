@@ -3,6 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import java.io.File;
+import java.io.FileReader;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -16,7 +18,7 @@ public class HomePage extends javax.swing.JFrame {
     public List<Secretary> secretaries = new ArrayList();
     public List<Supervisor> supervisors = new ArrayList();
     public List<MeterReader> meterReaders = new ArrayList();
-    
+        
     /**
      * Creates new form HomePage
      */
@@ -378,7 +380,7 @@ public class HomePage extends javax.swing.JFrame {
                 .addContainerGap(153, Short.MAX_VALUE))
         );
 
-        meterReaderPage.setMinimumSize(new java.awt.Dimension(100, 100));
+        meterReaderPage.setMinimumSize(new java.awt.Dimension(456, 307));
 
         jLabel7.setText("Account #:");
 
