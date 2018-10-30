@@ -286,7 +286,7 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("OTHER THINGS WITH COSTS AND SHIT");
+        jLabel4.setText("OTHER THINGS WITH COSTS AND STUFF");
 
         javax.swing.GroupLayout secretaryPageLayout = new javax.swing.GroupLayout(secretaryPage.getContentPane());
         secretaryPage.getContentPane().setLayout(secretaryPageLayout);
